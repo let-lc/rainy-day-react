@@ -1,17 +1,23 @@
+import { useState } from "react";
+import clsx from "clsx";
+
 import { Layout, RainingBackground, YTPlayer } from "@rd/components";
 
 const HomePage = () => {
+  const [staticBg, setStaticBg] = useState(false);
   return (
     <Layout>
       <main className="relative z-10 flex flex-col items-center justify-center flex-grow">
         <div className="flex flex-col items-start max-w-5xl w-full animate-float hover:animate-none">
           <div className="flex items-start select-none">
-            <img
-              src="/img/logo.svg"
-              className="w-12 h-12"
-              alt="Logo"
-              draggable={false}
-            />
+            <button onClick={() => setStaticBg((p) => !p)}>
+              <img
+                src="/img/logo.svg"
+                className="w-12 h-12"
+                alt="Logo"
+                draggable={false}
+              />
+            </button>
             <h1 className="text-white/75 text-3xl font-mono">Rainy Day</h1>
           </div>
           <YTPlayer />
@@ -29,7 +35,15 @@ const HomePage = () => {
         </p>
       </footer>
       {/* raining background */}
-      <RainingBackground />
+      <img
+        src="/img/bg/bg.jpg"
+        alt="Background"
+        className={clsx(
+          "absolute w-screen h-screen object-cover object-center",
+          staticBg ? "block" : "hidden"
+        )}
+      />
+      <RainingBackground show={!staticBg} />
     </Layout>
   );
 };
