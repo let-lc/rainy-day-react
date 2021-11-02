@@ -43,7 +43,7 @@ const VolumeControl = ({ volume, changeVolume }: VolumeControl) => {
         value={volume}
         onChange={volumeChangeHandler}
       />
-      <button onClick={volumeButtonHandler}>
+      <button onClick={volumeButtonHandler} className="focus:outline-none">
         {volume === 0 ? (
           <VolumeOffIcon className="w-4 h-4 text-white/50 group-hover:text-white" />
         ) : (

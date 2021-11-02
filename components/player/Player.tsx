@@ -164,7 +164,7 @@ const Player = ({ data, enableInputHandler, nextVideo }: PlayerProps) => {
         <div className="flex gap-x-2 w-24">
           <button
             onClick={enableInputHandler}
-            className="opacity-80 hover:opacity-100"
+            className="opacity-80 hover:opacity-100 focus:outline-none"
           >
             <LinkIcon className="w-4 h-4 text-white" />
           </button>
@@ -175,7 +175,7 @@ const Player = ({ data, enableInputHandler, nextVideo }: PlayerProps) => {
             className={clsx(
               "mr-2 relative",
               enableRepeatOne &&
-                'after:content-["•"] after:absolute after:-bottom-3.5 after:right-1.5 after:pr-px'
+                'after:content-["•"] after:absolute after:-bottom-3.5 after:right-1.5 after:pr-px focus:outline-none'
             )}
             title="Repeat"
           >
@@ -189,14 +189,14 @@ const Player = ({ data, enableInputHandler, nextVideo }: PlayerProps) => {
             />
           </button>
           {/* Play/Pause Button */}
-          <button onClick={() => setIsPlaying((p) => !p)}>
+          <button onClick={() => setIsPlaying((p) => !p)} className="focus:outline-none">
             {isPlaying ? (
               <PauseIcon className="w-16 h-16 drop-shadow-white-md text-white/80 hover:text-white transition-all duration-300" />
             ) : (
               <PlayIcon className="w-16 h-16 drop-shadow-white-md text-white/80 hover:text-white transition-all duration-300" />
             )}
           </button>
-          <button className="relative" title="Next" onClick={nextVideo}>
+          <button className="relative focus:outline-none" title="Next" onClick={nextVideo}>
             <ChevronRightIcon className="w-8 h-8 text-white/80 hover:text-white transition-all duration-300" />
           </button>
         </div>
