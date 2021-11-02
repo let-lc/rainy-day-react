@@ -51,7 +51,7 @@ if (canvas) {
 
   const raindropFx = new RaindropFX({
     canvas: canvas,
-    background: "/img/bg/12.jpg" // + background(),
+    background: "/img/bg/" + background(),
   });
   raindropFx.start();
 
