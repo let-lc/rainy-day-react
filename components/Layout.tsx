@@ -12,8 +12,7 @@ const Layout = ({ title = "", children }: LayoutProps) => {
       <Head>
         <title>{title}</title>
         <link rel="icon" href="/favicon.ico" />
-        {/* https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js */}
-        <script type="text/javascript" src="/scripts/raindrop-fx.js" />
+        <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/raindrop-fx@1.0.8/bundle/index.js" />
       </Head>
       {children}
     </div>

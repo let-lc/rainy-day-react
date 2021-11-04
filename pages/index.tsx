@@ -10,7 +10,10 @@ const HomePage = () => {
       <main className="relative z-10 flex flex-col items-center justify-center flex-grow">
         <div className="flex flex-col items-start max-w-5xl w-full animate-float hover:animate-none">
           <div className="flex items-start select-none">
-            <button onClick={() => setStaticBg((p) => !p)} className="focus:outline-none">
+            <button
+              onClick={() => setStaticBg((p) => !p)}
+              className="focus:outline-none"
+            >
               <img
                 src="/img/logo.svg"
                 className="w-12 h-12"
@@ -36,7 +39,7 @@ const HomePage = () => {
       </footer>
       {/* raining background */}
       <img
-        src="/img/bg/bg.jpg"
+        src="https://images.unsplash.com/photo-1506069748786-1f7a3d5d54cb"
         alt="Background"
         className={clsx(
           "absolute w-screen h-screen object-cover object-center",
